@@ -2,7 +2,7 @@ def noteToNumber(note):
     return alphabet[note]
 
 def numberToNote(number):
-    if number > 11:
+    while number > 11:
         number = number - 12
     return alphabetArray[number]
 

@@ -7,9 +7,10 @@ from resources.alphabet import *
 import os
 
 class Scale:
-    def __init__(self, key, sharpness, tonality):
+    def __init__(self, key, intonation, tonality):
         self.key = key
-        self.sharpness = sharpness
+        self.intonation = intonation
+        self.calculateIntonation()
         self.tonality = tonality
         self.rules = []
         self.notes = [''] * 8
@@ -19,15 +20,30 @@ class Scale:
             self.rules = [2, 1, 2, 2, 1, 2, 2]
         for x in range(0, 8):
             if x == 0:
-                self.notes[x] = noteToNumber(self.key)
+                self.notes[x] = noteToNumber(self.key) + self.intonation
             if x != 0:
                 # rule minus 1 because first letter has no rule applied
                 self.notes[x] = self.notes[ x - 1 ] + self.rules[x - 1]
         for x in range(0, 8):
             self.notes[x] = numberToNote(self.notes[x])
         return
+    
+    def calculateIntonation(self):
+        count = 0
+        for letter in self.intonation:
+            if letter == '#':
+                count = count + 1
+            if letter =="b":
+                count = count - 1
+        self.intonation = count
+
     def name(self):
-        overview = "{}{} {}".format(self.key, self.sharpness, self.tonality)
+        intonation = ''
+        if self.intonation > 0:
+            intonation = '#' * self.intonation
+        if self.intonation < 0:
+            intonation = 'b' * abs(self.intonation)
+        overview = "{}{} {}".format(self.key, intonation, self.tonality)
         return overview
 
 class Modes:
@@ -44,15 +60,10 @@ class Modes:
 # debug
 os.system('cls')
 
-alphabet = 'ABCDEFG'
-print("MAJOR SCALES")
-for letter in alphabet:
-    test = Scale(letter, '', 'major')
-    print('\t', test.name())
-    print('\t', test.notes)
+scale = Scale('A', '#', 'minor')
+print(scale.name())
+print(scale.notes)
 
-print("MINOR SCALES")
-for letter in alphabet:
-    test = Scale(letter, '', 'minor')
-    print('\t', test.name())
-    print('\t', test.notes)
+scale = Scale('F', 'b', 'minor')
+print(scale.name())
+print(scale.notes)

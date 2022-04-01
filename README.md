@@ -32,6 +32,19 @@ The goal is to create something that is interactive and/or demonstrative for lea
 
 
 ## Changelog
+### Version 0.3 - 2022/04/01
+* Implemented intonation flag.
+* I'm tired
+
+```
+# Sample output
+A# minor
+['A#', 'C', 'C#', 'D#', 'F', 'F#', 'G#', 'A#']
+Fb minor
+['E', 'F#', 'G', 'A', 'B', 'C', 'D', 'E']
+```
+
+
 ### Version 0.2 - 2022/04/01
 * renamed python files for fretboard and scales
 * created a functional generator for scales of both major and minor, without a working flag for sharpness
