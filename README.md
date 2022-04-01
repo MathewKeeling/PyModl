@@ -32,8 +32,46 @@ The goal is to create something that is interactive and/or demonstrative for lea
 
 
 ## Changelog
+### Version 0.2 - 2022/04/01
+* renamed python files for fretboard and scales
+* created a functional generator for scales of both major and minor, without a working flag for sharpness
+```
+# Sample output
+MAJOR SCALES
+         A major
+         ['A', 'B', 'C#', 'D', 'E', 'F#', 'G#', 'A']
+         B major
+         ['B', 'C#', 'D#', 'E', 'F#', 'G#', 'A#', 'B']
+         C major
+         ['C', 'D', 'E', 'F', 'G', 'A', 'B', 'C']
+         D major
+         ['D', 'E', 'F#', 'G', 'A', 'B', 'C#', 'D']
+         E major
+         ['E', 'F#', 'G#', 'A', 'B', 'C#', 'D#', 'E']
+         F major
+         ['F', 'G', 'A', 'A#', 'C', 'D', 'E', 'F']
+         G major
+         ['G', 'A', 'B', 'C', 'D', 'E', 'F#', 'G']
+MINOR SCALES
+         A minor
+         ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'A']
+         B minor
+         ['B', 'C#', 'D', 'E', 'F#', 'G', 'A', 'B']
+         C minor
+         ['C', 'D', 'D#', 'F', 'G', 'G#', 'A#', 'C']
+         D minor
+         ['D', 'E', 'F', 'G', 'A', 'A#', 'C', 'D']
+         E minor
+         ['E', 'F#', 'G', 'A', 'B', 'C', 'D', 'E']
+         F minor
+         ['F', 'G', 'G#', 'A#', 'C', 'C#', 'D#', 'F']
+         G minor
+         ['G', 'A', 'A#', 'C', 'D', 'D#', 'F', 'G']
+```
+
 ### Version 0.1 - 2022/03/31
 Everything you see here:
 * Goals described
 * Made a method to generate all the notes of a fretboard
 * I'm tired.
+

@@ -25,8 +25,6 @@ class Fretboard:
                 note = numberToNote(note)
                 self.fretBoard[string][fret] = note
                 
-
-
             
 
 test = Fretboard(6, 25)

@@ -2,6 +2,8 @@ def noteToNumber(note):
     return alphabet[note]
 
 def numberToNote(number):
+    if number > 11:
+        number = number - 12
     return alphabetArray[number]
 
 alphabet = {
@@ -35,3 +37,5 @@ alphabetArray = [
 ]
 
 #  debug
+
+print(numberToNote(2))
