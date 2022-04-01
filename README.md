@@ -32,7 +32,7 @@ The goal is to create something that is interactive and/or demonstrative for lea
 
 
 ## Changelog
-2022/03/31
+### Version 0.1 - 2022/03/31
 Everything you see here:
 * Goals described
 * Made a method to generate all the notes of a fretboard
