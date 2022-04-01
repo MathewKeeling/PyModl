@@ -13,3 +13,19 @@ Visualization of the fret board w/ different tunings.
 CAGED review, modes and positions, etc.
 
 We'll see where this goes.
+
+## Plans
+First I want to establish a way to generate a fretboard in plaintext that reflects a theoretical fretboard.
+
+I would then like to dynamically emphasize different notes corresponding to different music theory concepts.
+
+The goal is to create something that is interactive and/or demonstrative for learning purposes.
+
+### Examples:
+* What's a full tone higher than a C note?
+* To which major or minor scale does C Locrian belong?
+* To which scale does the following sequence of notes belong? 
+ * C-D-E-F-G-A-B-C
+* The highlighted notes belong to which scale?
+* The highlighted notes belong to which mode?
+* What are the notes of the C Dorian Mode?
