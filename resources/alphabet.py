@@ -1,14 +1,37 @@
+def noteToNumber(note):
+    return alphabet[note]
+
+def numberToNote(number):
+    return alphabetArray[number]
+
 alphabet = {
-    'a' : 1,
-    'a#': 2,
-    'b' : 3,
-    'c' : 4,
-    'c#': 5,
-    'd' : 6,
-    'd#': 7,
-    'e' : 8,
-    'f' : 9,
-    'f#': 10,
-    'g' : 11,
-    'g#': 12,
+    'A' : 0,
+    'A#': 1,
+    'B' : 2,
+    'C' : 3,
+    'C#': 4,
+    'D' : 5,
+    'D#': 6,
+    'E' : 7,
+    'F' : 8,
+    'F#': 9,
+    'G' : 10,
+    'G#': 11,
 }
+
+alphabetArray = [
+    'A',
+    'A#',
+    'B',
+    'C',
+    'C#',
+    'D',
+    'D#',
+    'E',
+    'F',
+    'F#',
+    'G',
+    'G#'
+]
+
+#  debug

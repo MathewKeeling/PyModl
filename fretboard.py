@@ -3,25 +3,35 @@ from resources.tunings import *
 
 
 class Fretboard:
-    def __init__(self, fretDepth):
-        self.stringCount = 6
+    def __init__(self, stringCount, fretDepth):
+        self.stringCount = stringCount
         self.fretDepth = fretDepth
-        self.fretBoard = [ [], [], [], [], [], [] ]
-        self.tuning = []
+        self.fretBoard = []
     
     def tune(self, tuning):
         self.tuning = tuning
 
     def populateFretBoard(self):
-        for string in range(self.stringCount):
-            print("I'm the {} string!".format(self.tuning[string]))
+        strings, frets = (self.stringCount, self.fretDepth)
+        self.fretBoard = [[0 for x in range(self.fretDepth)] for x in range(self.stringCount)]
+        
+        for string in range(0, self.stringCount ):
+            for fret in range(0, self.fretDepth):
+                note = self.tuning[string]
+                note = noteToNumber(note)
+                note = note + fret
+                while note > 11:
+                    note = note - 12
+                note = numberToNote(note)
+                self.fretBoard[string][fret] = note
+                
 
-            for fret in range(self.fretDepth):
-                fret = fret + 1
-                print("\tI'm fret {}!".format(fret))
 
+            
 
-test = Fretboard(24)
+test = Fretboard(6, 25)
 test.tune(tunings['standard'])
 test.populateFretBoard()
 
+for string in test.fretBoard:
+    print(string)

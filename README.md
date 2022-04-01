@@ -29,3 +29,11 @@ The goal is to create something that is interactive and/or demonstrative for lea
 * The highlighted notes belong to which scale?
 * The highlighted notes belong to which mode?
 * What are the notes of the C Dorian Mode?
+
+
+## Changelog
+2022/03/31
+Everything you see here:
+* Goals described
+* Made a method to generate all the notes of a fretboard
+* I'm tired.
