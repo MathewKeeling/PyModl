@@ -57,9 +57,6 @@ class Modes:
     aeolian =    [5, 6, 0, 1, 2, 3, 4, 5]  # submediant through submediant
     locrian =    [6, 0, 1, 2, 3, 4, 5, 6]  # leading tone through leading tone
 
-# debug
-os.system('cls')
-
 scale = Scale('A', '#', 'minor')
 print(scale.name())
 print(scale.notes)
