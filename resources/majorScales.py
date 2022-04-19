@@ -8,6 +8,10 @@
 #  How to Construct Minor Scales
 #    "Whole, Half, Whole, Whole, Half, Whole, Whole"
 
+#  3 notes per string scales/modes form
+#  https://www.anyonecanplayguitar.co.uk/three-note-per-string-scales/
+    #  F Ionian through E Locrian
+
 #  C Major Scale Bias
 #  https://music.stackexchange.com/questions/17760/why-is-music-theory-built-so-tightly-around-the-c-major-scale
 
@@ -118,7 +122,6 @@ gMajorsScale = {
 
 
 #  debug
-for entry in cMajorScale:
-    print(entry)
-    print('\t', cMajorScale[entry])
-    
+#for entry in cMajorScale:
+#    print(entry)
+#    print('\t', cMajorScale[entry])

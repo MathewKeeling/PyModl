@@ -8,7 +8,7 @@ import os
 
 class Scale:
     def __init__(self, key, intonation, tonality):
-        self.key = key
+        self.key = key.upper()
         self.intonation = intonation
         self.calculateIntonation()
         self.tonality = tonality
@@ -57,10 +57,25 @@ class Modes:
     aeolian =    [5, 6, 0, 1, 2, 3, 4, 5]  # submediant through submediant
     locrian =    [6, 0, 1, 2, 3, 4, 5, 6]  # leading tone through leading tone
 
-scale = Scale('A', '#', 'minor')
-print(scale.name())
-print(scale.notes)
+keys = {
+    'aMajor': ['A', '', 'major'],
+    'bMajor': ['B', '', 'major'],
+    'cMajor': ['C', '', 'major'],
+    'dMajor': ['D', '', 'major'],
+    'eMajor': ['E', '', 'major'],
+    'fMajor': ['F', '', 'major'],
+    'gMajor': ['G', '', 'major'],
+    'aMinor': ['a', '', 'minor'],
+    'bMinor': ['b', '', 'minor'],
+    'cMinor': ['c', '', 'minor'],
+    'dMinor': ['d', '', 'minor'],
+    'eMinor': ['e', '', 'minor'],
+    'fMinor': ['f', '', 'minor'],
+    'gMinor': ['g', '', 'minor']
+}
 
-scale = Scale('F', 'b', 'minor')
-print(scale.name())
-print(scale.notes)
+
+for key in keys:
+    scale = Scale(keys[key][0], keys[key][1], keys[key][2])
+    #print(scale.name())
+    #print(scale.notes)

@@ -38,4 +38,4 @@ alphabetArray = [
 
 #  debug
 
-print(numberToNote(2))
+#print(numberToNote(2))
