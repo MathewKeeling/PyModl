@@ -1,10 +1,9 @@
-#  This file will contain methods to generate various scales of various keys.
+#  This file will contain methods to generate scales in their various keys with their various modes.
 #  Generate Major Scales
 #  Generate Minor Scales
 #  Generate Chromatic Scales
 #  Generate Pentatonic Scales
 from resources.alphabet import *
-import os
 
 class Scale:
     def __init__(self, key, intonation, tonality):
@@ -13,21 +12,31 @@ class Scale:
         self.calculateIntonation()
         self.tonality = tonality
         self.rules = []
-        self.notes = [''] * 8
-        if tonality == 'major':
+        self.keySignature = ['']
+        self.calculateKeySignature()
+        self.name = self.calculateName()
+        
+    def calculateKeySignature(self):
+        if self.tonality == 'major':
             self.rules = [2, 2, 1, 2, 2, 2, 1]
-        elif tonality == 'minor':
+            self.keySignature = self.keySignature * 8
+        elif self.tonality == 'minor':
             self.rules = [2, 1, 2, 2, 1, 2, 2]
-        for x in range(0, 8):
+            self.keySignature = self.keySignature * 8
+        elif self.tonality == 'chromatic':
+            pass
+        elif self.tonality == 'pentatonic':
+            pass
+        for x in range(0, len(self.rules) + 1):
             if x == 0:
-                self.notes[x] = noteToNumber(self.key) + self.intonation
+                self.keySignature[x] = noteToNumber(self.key) + self.intonation
             if x != 0:
                 # rule minus 1 because first letter has no rule applied
-                self.notes[x] = self.notes[ x - 1 ] + self.rules[x - 1]
-        for x in range(0, 8):
-            self.notes[x] = numberToNote(self.notes[x])
+                self.keySignature[x] = self.keySignature[ x - 1 ] + self.rules[x - 1]
+        for x in range(0, len(self.rules) + 1):
+            self.keySignature[x] = numberToNote(self.keySignature[x])
         return
-    
+
     def calculateIntonation(self):
         count = 0
         for letter in self.intonation:
@@ -37,17 +46,17 @@ class Scale:
                 count = count - 1
         self.intonation = count
 
-    def name(self):
+    def calculateName(self):
         intonation = ''
         if self.intonation > 0:
             intonation = '#' * self.intonation
         if self.intonation < 0:
             intonation = 'b' * abs(self.intonation)
-        overview = "{}{} {}".format(self.key, intonation, self.tonality)
-        return overview
+        name = "{}{} {}".format(self.key, intonation, self.tonality)
+        return name
 
 class Modes:
-    def __init__(self, stuff):
+    def __init__(self):
         return
     ionian =     [0, 1, 2, 3, 4, 5, 6, 0]  # tonic through tonic
     dorian =     [1, 2, 3, 4, 5, 6, 0, 1]  # supertonic through supertonic
@@ -74,8 +83,7 @@ keys = {
     'gMinor': ['g', '', 'minor']
 }
 
-
 for key in keys:
     scale = Scale(keys[key][0], keys[key][1], keys[key][2])
-    #print(scale.name())
-    #print(scale.notes)
+    #print(scale.name)
+    #print(scale.keySignature)
