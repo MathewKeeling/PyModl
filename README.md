@@ -32,6 +32,33 @@ The goal is to create something that is interactive and/or demonstrative for lea
 
 
 ## Changelog
+
+### Version 0.4 - 2022/04/19
+* Neglected changelog for three weeks
+* Refactored some bits.
+* Added the ability to generate modes and select them.
+
+```
+#  sample output
+Key of F.
+F key signature: 
+['F', 'G', 'A', 'A#', 'C', 'D', 'E', 'F']
+F Ionian
+['F', 'G', 'A', 'A#', 'C', 'D', 'E', 'F']
+G Dorian
+['G', 'A', 'A#', 'C', 'D', 'E', 'F', 'G']
+A Phrygian
+['A', 'A#', 'C', 'D', 'E', 'F', 'G', 'A']
+A# Lydian
+['A#', 'C', 'D', 'E', 'F', 'G', 'A', 'A#']
+C Mixolydian
+['C', 'D', 'E', 'F', 'G', 'A', 'A#', 'C']
+D Natural Minor (Aeolian)
+['D', 'E', 'F', 'G', 'A', 'A#', 'C', 'D']
+E Locrian
+['E', 'F', 'G', 'A', 'A#', 'C', 'D', 'E']
+```
+
 ### Version 0.3 - 2022/04/01
 * Implemented intonation flag.
 * I'm tired
