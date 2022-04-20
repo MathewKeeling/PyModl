@@ -1,7 +1,6 @@
 from resources.alphabet import *
 from resources.tunings import *
 
-
 class Fretboard:
     def __init__(self, stringCount, fretDepth):
         self.stringCount = stringCount
@@ -24,11 +23,9 @@ class Fretboard:
                     note = note - 12
                 note = numberToNote(note)
                 self.fretBoard[string][fret] = note
-                
-            
 
 test = Fretboard(6, 25)
-test.tune(tunings['standard'])
+test.tune(tunings['dropC'])
 test.populateFretBoard()
 
 for string in test.fretBoard:

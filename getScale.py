@@ -5,7 +5,7 @@
 #  Generate Pentatonic Scales
 from resources.alphabet import *
 
-class Scale:
+class newScale:
     def __init__(self, key, intonation, tonality):
         self.key = key.upper()
         self.intonation = intonation
@@ -15,6 +15,8 @@ class Scale:
         self.keySignature = ['']
         self.calculateKeySignature()
         self.name = self.calculateName()
+        self.modesInKey = {}
+        self.calculateModes()
         
     def calculateKeySignature(self):
         if self.tonality == 'major':
@@ -46,6 +48,26 @@ class Scale:
                 count = count - 1
         self.intonation = count
 
+    def calculateModes(self):
+        modes = {
+                'Ionian':     [0, 1, 2, 3, 4, 5, 6, 0],  # tonic through tonic
+                'Dorian':     [1, 2, 3, 4, 5, 6, 0, 1],  # supertonic through supertonic
+                'Phrygian':   [2, 3, 4, 5, 6, 0, 1, 2],  # mediant through mediant
+                'Lydian':     [3, 4, 5, 6, 0, 1, 2, 3],  # subdominant through subdominant
+                'Mixolydian': [4, 5, 6, 0, 1, 2, 3, 4],  # dominant through dominant
+                'Natural Minor (Aeolian)':    [5, 6, 0, 1, 2, 3, 4, 5],  # submediant through submediant
+                'Locrian':    [6, 0, 1, 2, 3, 4, 5, 6],  # leading tone through leading tone
+        }
+        keySignatureIndex = 0
+        for mode in modes:
+            selectedMode = '{} {}'.format(self.keySignature[keySignatureIndex], mode)
+            keySignatureIndex = keySignatureIndex + 1
+            self.modesInKey[selectedMode] = ['']
+            self.modesInKey[selectedMode] = self.modesInKey[selectedMode] * 8
+            for x in range (0, 8):
+                self.modesInKey[selectedMode][x] = self.keySignature[modes[mode][x]]
+
+
     def calculateName(self):
         intonation = ''
         if self.intonation > 0:
@@ -55,16 +77,6 @@ class Scale:
         name = "{}{} {}".format(self.key, intonation, self.tonality)
         return name
 
-class Modes:
-    def __init__(self):
-        return
-    ionian =     [0, 1, 2, 3, 4, 5, 6, 0]  # tonic through tonic
-    dorian =     [1, 2, 3, 4, 5, 6, 0, 1]  # supertonic through supertonic
-    phrygian =   [2, 3, 4, 5, 6, 0, 1, 2]  # mediant through mediant
-    lydian =     [3, 4, 5, 6, 0, 1, 2, 3]  # subdominant through subdominant
-    mixolydian = [4, 5, 6, 0, 1, 2, 3, 4]  # dominant through dominant
-    aeolian =    [5, 6, 0, 1, 2, 3, 4, 5]  # submediant through submediant
-    locrian =    [6, 0, 1, 2, 3, 4, 5, 6]  # leading tone through leading tone
 
 keys = {
     'aMajor': ['A', '', 'major'],
@@ -84,6 +96,8 @@ keys = {
 }
 
 for key in keys:
-    scale = Scale(keys[key][0], keys[key][1], keys[key][2])
-    #print(scale.name)
-    #print(scale.keySignature)
+    scale = newScale(keys[key][0], keys[key][1], keys[key][2])
+    print(scale.key)
+    print(scale.keySignature)
+    print(scale.modesInKey)
+
