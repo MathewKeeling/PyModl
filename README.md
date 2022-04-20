@@ -30,6 +30,12 @@ The goal is to create something that is interactive and/or demonstrative for lea
 * The highlighted notes belong to which mode?
 * What are the notes of the C Dorian Mode?
 
+## Anticipated Changes
+* Ability to use either sharp or flat notes. 
+  * Typically, Major keys' B, E, A, D, and G's accidentals are referred to by flats and not sharps.
+  * Typically, Minor keys' B and E's accidentals are referred to by flats and not sharps.
+* Depending on how I approach the algorithms to quiz you on key signatures / scale positions / modes...
+  * It's going to be a problem that the current system cannot account for octaves of notes. I may simply have to use frets as a fulcrum.
 
 ## Changelog
 
