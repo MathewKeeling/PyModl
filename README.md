@@ -14,9 +14,9 @@ This project is the synthesis of my desires to learn software development and mu
 
 ## Plans
 ### My plans from basic to incredibly ambitious are:
- - [x] First I want to establish a way to generate a fretboard in plaintext that reflects a theoretical fretboard.
- - [ ] I would then like to dynamically emphasize different notes corresponding to different music theory concepts.
- - [ ] The goal is to create something that is interactive and/or demonstrative for learning purposes.
+ - [x] Establish a way to generate a fretboard in plaintext that reflects a theoretical fretboard.
+ - [ ] Integrate hz and octaves, differentiate based on that instead of arbitrary index values.
+ - [ ] Dynamically emphasize different notes corresponding to different music theory concepts.
  - [ ] Implement ASIO integration--monitor input--come up with a very basic Rocksmith type thing for practicing.
  - [ ] Make a mobile version.
 
