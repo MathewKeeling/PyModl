@@ -39,6 +39,13 @@ The goal is to create something that is interactive and/or demonstrative for lea
 
 ## Changelog
 
+### Version 0.5 - 2022/05/08
+* First Working Version
+  * I'm going to break this going forward.
+  * I need to implement a method to differentiate between keys via hz and octave. Currenly everything is just relative to some indexes I came up with.
+  * More information here: https://www.ece.iastate.edu/~alexs/classes/2016_Spring_575/HW/HW5/files/piano-key-freq-wikipedia.pdf 
+
+
 ### Version 0.4 - 2022/04/19
 * Neglected changelog for three weeks
 * Refactored some bits.
