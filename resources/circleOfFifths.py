@@ -3,6 +3,13 @@
 #  good video
 #  https://www.youtube.com/watch?v=_LHv5WN4SiU
 
+# Major: Starting at the 11 O'Clock Position:
+#    Father Charles Goes Down And Ends Battle, 2x
+#    The sharpened notes are FCGDAEB as you progress clockwise.
+# Minor: Starting at the 8 O'clock Position:
+#    Battle Ends And Down Goes Charles Father, 2x
+#    The flattened notes are BEADGCF as you progress counter-clockwise.
+
 #  generate a clock
 #  Major Scale Circle
     #  12: C

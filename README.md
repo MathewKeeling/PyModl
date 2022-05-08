@@ -2,24 +2,23 @@
 Blending my passion for guitar with my desire to learn software development.
 
 ## Overview
-When I played guitar as a kid I fundamentally didn't understand the way modes / positions of the major scale worked.
+I have been playing guitar for 13 years. Until this spring, I did not know any music theory beyond a few things:
+* Major / Minor Triads
+* Pentatonic Scale (Four-Five frets worth)
+  * Flattened Fifth Note
+* Major Scale from the Ionian Mode through the first octave of Phrygian.
 
-Recently, I have been learning music theory. I am understanding things a lot more clearly now.
+Recently, I have been learning music theory. It's dramatically changed the way I see the guitar. A ton of things are falling into place. (Learning songs, writing music, being able to think of my riffs in terms of notes, etc...)
 
-I want to make an app that helps with recall for various aspects of guitar playing...
-
-Visualization of the fret board w/ different tunings.
-
-CAGED review, modes and positions, etc.
-
-We'll see where this goes.
+This project is the synthesis of my desires to learn software development and music theory. This application will provide the user with tools to practice scales and other music theory bits.
 
 ## Plans
-First I want to establish a way to generate a fretboard in plaintext that reflects a theoretical fretboard.
-
-I would then like to dynamically emphasize different notes corresponding to different music theory concepts.
-
-The goal is to create something that is interactive and/or demonstrative for learning purposes.
+### My plans from basic to incredibly ambitious are:
+ - [x] First I want to establish a way to generate a fretboard in plaintext that reflects a theoretical fretboard.
+ - [] I would then like to dynamically emphasize different notes corresponding to different music theory concepts.
+ - [] The goal is to create something that is interactive and/or demonstrative for learning purposes.
+ - [] Implement ASIO integration--monitor input--come up with a very basic Rocksmith type thing for practicing.
+ - [] Make a mobile version.
 
 ### Examples:
 * What's a full tone higher than a C note?
