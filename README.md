@@ -38,14 +38,38 @@ This project is the synthesis of my desires to learn software development and mu
 
 ## Changelog
 
-### Version 0.5 - 2022/05/08
+### Version 0.21
+* Renamed versioning scheme.
+  * Added a digit following the decimal.
+* First version 0.2X
+* Implemented a means to generate the code to store the names of everything in a list.
+  #### Sample Output
+    ```
+    ...
+    [36, "", "G#3/Ab3", 207.65234878997256],
+    [37, "", "A3", 220.0],
+    [38, "", "A#3/Bb3", 233.08188075904496],
+    [39, "", "B3", 246.94165062806206],
+    [40, "", "C4", 261.6255653005986],
+    [41, "", "C#4/Db4", 277.1826309768721],
+    [42, "", "D4", 293.6647679174076],
+    [43, "", "D#4/Eb4", 311.1269837220809],
+    [44, "", "E4", 329.6275569128699],
+    [45, "", "F4", 349.2282314330039],
+    [46, "", "F#4/Gb4", 369.9944227116344],
+    [47, "", "G4", 391.99543598174927],
+    [48, "", "G#4/Ab4", 415.3046975799451],
+    ...
+    ```
+
+### Version 0.15 - 2022/05/08
 * First Working Version
   * I'm going to break this going forward.
   * I need to implement a method to differentiate between keys via hz and octave. Currenly everything is just relative to some indexes I came up with.
   * More information here: https://www.ece.iastate.edu/~alexs/classes/2016_Spring_575/HW/HW5/files/piano-key-freq-wikipedia.pdf 
 
 
-### Version 0.4 - 2022/04/19
+### Version 0.14 - 2022/04/19
 * Neglected changelog for three weeks
 * Refactored some bits.
 * Added the ability to generate modes and select them.
@@ -71,7 +95,7 @@ E Locrian
 ['E', 'F', 'G', 'A', 'A#', 'C', 'D', 'E']
 ```
 
-### Version 0.3 - 2022/04/01
+### Version 0.13 - 2022/04/01
 * Implemented intonation flag.
 * I'm tired
 
@@ -84,7 +108,7 @@ Fb minor
 ```
 
 
-### Version 0.2 - 2022/04/01
+### Version 0.12 - 2022/04/01
 * renamed python files for fretboard and scales
 * created a functional generator for scales of both major and minor, without a working flag for sharpness
 ```
@@ -121,7 +145,7 @@ MINOR SCALES
          ['G', 'A', 'A#', 'C', 'D', 'D#', 'F', 'G']
 ```
 
-### Version 0.1 - 2022/03/31
+### Version 0.11 - 2022/03/31
 Everything you see here:
 * Goals described
 * Made a method to generate all the notes of a fretboard
