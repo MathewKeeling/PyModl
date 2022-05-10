@@ -15,7 +15,10 @@ This project is the synthesis of my desires to learn software development and mu
 ## Plans
 ### My plans from basic to incredibly ambitious are:
  - [x] Establish a way to generate a fretboard in plaintext that reflects a theoretical fretboard.
- - [ ] Integrate hz and octaves, differentiate based on that instead of arbitrary index values.
+ - [x] Integrate hz and octaves, differentiate based on that instead of arbitrary index values.
+ - [ ] Modify getFretBoard.py such that it displays octaves of the notes (targeting version 0.23)
+ - [ ] Modify getFredboard.py such that the notes are all padded w/ spacing.
+ - [ ] Establish clear definitions and use cases separating 'Aristotelian' Notes from 'Octave Defined' notes. (My language limiting my world, again.)
  - [ ] Dynamically emphasize different notes corresponding to different music theory concepts.
  - [ ] Implement ASIO integration--monitor input--come up with a very basic Rocksmith type thing for practicing.
  - [ ] Make a mobile version.
@@ -37,6 +40,29 @@ This project is the synthesis of my desires to learn software development and mu
   * It's going to be a problem that the current system cannot account for octaves of notes. I may simply have to use frets as a fulcrum.
 
 ## Changelog
+
+### Version 0.225
+* Fixed the getScale.py function to not produce unintelligble messes of output
+* Added pretty print and better naming of output.
+* Updated goals.
+#### Sample Output from getScale.py
+```
+ G minor Key Signature: ['G', 'A', 'A♯/B♭', 'C', 'D', 'D♯/E♭', 'F', 'G']
+    G Ionian
+       ['G', 'A', 'A♯/B♭', 'C', 'D', 'D♯/E♭', 'F', 'G']
+    A Dorian
+       ['A', 'A♯/B♭', 'C', 'D', 'D♯/E♭', 'F', 'G', 'A']
+    A♯/B♭ Phrygian
+       ['A♯/B♭', 'C', 'D', 'D♯/E♭', 'F', 'G', 'A', 'A♯/B♭']
+    C Lydian
+       ['C', 'D', 'D♯/E♭', 'F', 'G', 'A', 'A♯/B♭', 'C']
+    D Mixolydian
+       ['D', 'D♯/E♭', 'F', 'G', 'A', 'A♯/B♭', 'C', 'D']
+    D♯/E♭ Natural Minor (Aeolian)
+       ['D♯/E♭', 'F', 'G', 'A', 'A♯/B♭', 'C', 'D', 'D♯/E♭']
+    F Locrian
+       ['F', 'G', 'A', 'A♯/B♭', 'C', 'D', 'D♯/E♭', 'F']
+```
 
 ### Verson 0.22
 * Implemented a means to generate hemholtz name

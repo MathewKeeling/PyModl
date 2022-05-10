@@ -1,3 +1,5 @@
+# alphabet. Doesn't include octaves.
+
 def noteToNumber(note):
     return alphabet[note]
 

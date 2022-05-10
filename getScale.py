@@ -97,7 +97,9 @@ keys = {
 
 for key in keys:
     scale = newScale(keys[key][0], keys[key][1], keys[key][2])
-    print(scale.key)
-    print(scale.keySignature)
-    print(scale.modesInKey)
+    print("\n", scale.key, scale.tonality, "Key Signature:", scale.keySignature)
+    for mode in scale.modesInKey:
+        print("   ",mode)
+        print("      ", scale.modesInKey[mode][:])
+    #print(scale.modesInKey)
 
