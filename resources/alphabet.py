@@ -1,9 +1,9 @@
 # alphabet. Doesn't include octaves.
 
-def noteToNumber(note):
+def note_to_number(note):
     return alphabet[note]
 
-def numberToNote(number):
+def number_to_note(number):
     while number > 11:
         number = number - 12
     return alphabetArray[number]
@@ -37,7 +37,3 @@ alphabetArray = [
     'G',
     'G♯/A♭'
 ]
-
-#  debug
-
-#print(numberToNote(2))

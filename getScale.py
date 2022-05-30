@@ -4,21 +4,23 @@
 #  Generate Chromatic Scales
 #  Generate Pentatonic Scales
 from resources.alphabet import *
+from resources.keys import *
+from resources.modes import *
 
 class newScale:
     def __init__(self, key, intonation, tonality):
         self.key = key.upper()
         self.intonation = intonation
-        self.calculateIntonation()
+        self.calculate_intonation()
         self.tonality = tonality
         self.rules = []
         self.keySignature = ['']
-        self.calculateKeySignature()
-        self.name = self.calculateName()
+        self.calculate_key_signature()
+        self.name = self.calculate_name()
         self.modesInKey = {}
-        self.calculateModes()
+        self.calculate_modes()
         
-    def calculateKeySignature(self):
+    def calculate_key_signature(self):
         if self.tonality == 'major':
             self.rules = [2, 2, 1, 2, 2, 2, 1]
             self.keySignature = self.keySignature * 8
@@ -31,15 +33,15 @@ class newScale:
             pass
         for x in range(0, len(self.rules) + 1):
             if x == 0:
-                self.keySignature[x] = noteToNumber(self.key) + self.intonation
+                self.keySignature[x] = note_to_number(self.key) + self.intonation
             if x != 0:
                 # rule minus 1 because first letter has no rule applied
                 self.keySignature[x] = self.keySignature[ x - 1 ] + self.rules[x - 1]
         for x in range(0, len(self.rules) + 1):
-            self.keySignature[x] = numberToNote(self.keySignature[x])
+            self.keySignature[x] = number_to_note(self.keySignature[x])
         return
 
-    def calculateIntonation(self):
+    def calculate_intonation(self):
         count = 0
         for letter in self.intonation:
             if letter == '#':
@@ -48,16 +50,7 @@ class newScale:
                 count = count - 1
         self.intonation = count
 
-    def calculateModes(self):
-        modes = {
-                'Ionian':                     [0, 1, 2, 3, 4, 5, 6, 0],  # tonic through tonic
-                'Dorian':                     [1, 2, 3, 4, 5, 6, 0, 1],  # supertonic through supertonic
-                'Phrygian':                   [2, 3, 4, 5, 6, 0, 1, 2],  # mediant through mediant
-                'Lydian':                     [3, 4, 5, 6, 0, 1, 2, 3],  # subdominant through subdominant
-                'Mixolydian':                 [4, 5, 6, 0, 1, 2, 3, 4],  # dominant through dominant
-                'Natural Minor (Aeolian)':    [5, 6, 0, 1, 2, 3, 4, 5],  # submediant through submediant
-                'Locrian':                    [6, 0, 1, 2, 3, 4, 5, 6],  # leading tone through leading tone
-        }
+    def calculate_modes(self):
         keySignatureIndex = 0
         for mode in modes:
             selectedMode = '{} {}'.format(self.keySignature[keySignatureIndex], mode)
@@ -67,8 +60,7 @@ class newScale:
             for x in range (0, 8):
                 self.modesInKey[selectedMode][x] = self.keySignature[modes[mode][x]]
 
-
-    def calculateName(self):
+    def calculate_name(self):
         intonation = ''
         if self.intonation > 0:
             intonation = '#' * self.intonation
@@ -76,24 +68,6 @@ class newScale:
             intonation = 'b' * abs(self.intonation)
         name = "{}{} {}".format(self.key, intonation, self.tonality)
         return name
-
-
-keys = {
-    'aMajor': ['A', '', 'major'],
-    'bMajor': ['B', '', 'major'],
-    'cMajor': ['C', '', 'major'],
-    'dMajor': ['D', '', 'major'],
-    'eMajor': ['E', '', 'major'],
-    'fMajor': ['F', '', 'major'],
-    'gMajor': ['G', '', 'major'],
-    'aMinor': ['a', '', 'minor'],
-    'bMinor': ['b', '', 'minor'],
-    'cMinor': ['c', '', 'minor'],
-    'dMinor': ['d', '', 'minor'],
-    'eMinor': ['e', '', 'minor'],
-    'fMinor': ['f', '', 'minor'],
-    'gMinor': ['g', '', 'minor']
-}
 
 for key in keys:
     scale = newScale(keys[key][0], keys[key][1], keys[key][2])

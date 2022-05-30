@@ -41,6 +41,11 @@ This project is the synthesis of my desires to learn software development and mu
 
 ## Changelog
 
+### Version 0.2275
+* Hilarious version numbers
+* Cleaned up resources. (Modes, Keys, Alphabet)
+* Help from M.S. using delegation to clean up the methods in generateNoteLibrary.py
+
 ### Version 0.225
 * Fixed the getScale.py function to not produce unintelligble messes of output
 * Added pretty print and better naming of output.
