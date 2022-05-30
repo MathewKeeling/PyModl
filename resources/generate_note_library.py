@@ -36,7 +36,7 @@ def generate_notes_list():
         offset = 8
         octave = ( x + offset ) // 12
         noteCount = (x-1) % 12
-        noteName = alphabetArray[noteCount]
+        noteName = alphabet_array[noteCount]
         helmholtzName = get_canonical_name(noteName, octave, format_helmholtz)
         scientificName = get_canonical_name(noteName, octave, format_scientific_name)
         print("[{}, \"{}\", \"{}\", {}],".format(keyNumber, helmholtzName, scientificName, frequencyHz))

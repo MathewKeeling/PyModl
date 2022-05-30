@@ -6,7 +6,7 @@ def note_to_number(note):
 def number_to_note(number):
     while number > 11:
         number = number - 12
-    return alphabetArray[number]
+    return alphabet_array[number]
 
 alphabet = {
     'A' : 0,
@@ -23,7 +23,7 @@ alphabet = {
     'G♯/A♭': 11,
 }
 
-alphabetArray = [
+alphabet_array = [
     'A',
     'A♯/B♭',
     'B',
