@@ -41,6 +41,15 @@ This project is the synthesis of my desires to learn software development and mu
 
 ## Changelog
 
+### Version 0.22875
+* Achilles Paradox
+* Renamed get_note_library.py to pitch_notation
+  * Refactored. Reduced redundancy. Made it easier to read.
+  * It's purpose is more clear now.
+  * Generates HPN and SPN names.
+    * Helmholtz Pitch Notation
+    * Scientific Pitch Notation
+
 ### Version 0.2275
 * Hilarious version numbers
 * Cleaned up resources. (Modes, Keys, Alphabet)
