@@ -16,7 +16,8 @@ This project is the synthesis of my desires to learn software development and mu
 ### My plans from basic to incredibly ambitious are:
  - [x] Establish a way to generate a fretboard in plaintext that reflects a theoretical fretboard.
  - [x] Integrate hz and octaves, differentiate based on that instead of arbitrary index values.
- - [ ] Modify getFretBoard.py such that it displays octaves of the notes (targeting version 0.23)
+ - [X] Modify getFretBoard.py such that it displays octaves of the notes (targeting version 0.23)
+ - [ ] Modify getFretBoard such that it is object oriented.
  - [ ] Modify getFredboard.py such that the notes are all padded w/ spacing.
  - [ ] Establish clear definitions and use cases separating 'Aristotelian' Notes from 'Octave Defined' notes. (My language limiting my world, again.)
  - [ ] Dynamically emphasize different notes corresponding to different music theory concepts.
@@ -40,6 +41,12 @@ This project is the synthesis of my desires to learn software development and mu
   * It's going to be a problem that the current system cannot account for octaves of notes. I may simply have to use frets as a fulcrum.
 
 ## Changelog
+
+### Version 0.23
+* Fretboard now generates fretboard w/ Pitch Notation.
+* Updated goals to incldue making get_fretboard object oriented
+  * This would allow for easily selecting different views.
+  * It would probably be advisable to add a non Pitch Notation value/attribute to each note arrayIndex/object.
 
 ### Version 0.22875
 * Achilles Paradox
