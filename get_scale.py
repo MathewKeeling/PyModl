@@ -61,35 +61,45 @@ class newScale:
 
 
     def calculate_modes(self):
-        keySignatureIndex = 0
-        modeIndex = 0
-        modeCounter = 0
+        modesArrayIndexSelector = 0
+        modeIterator = 0
 
-        if self.tonality == 'minor':
-            modeIndex = 4
-        elif self.tonality == 'major':
-            modeIndex = 0
+        if self.tonality == 'major':
+            modesArrayIndexSelector = 0
+        elif self.tonality == 'minor':
+            modesArrayIndexSelector = modesArrayIndexSelector + 5
 
-        while modeCounter < 6:
-            if modeIndex > 1:
-                modeIndex = modeIndex - 6
-            mode_name = f'{modes[modeIndex][0][0]}'
+        # Iterate Over the Constituent Modes Per Key Signature
+        while modeIterator < 7:
 
-            selectedMode_root_note = f'{self.keySignature[keySignatureIndex]}'
-            selectedMode = {}
+            # Handling overflow
+            if modesArrayIndexSelector > 6:
+                modesArrayIndexSelector = modesArrayIndexSelector - 7
 
-            selectedMode['mode_name'] = mode_name
-            selectedMode['mode_root_note'] = selectedMode_root_note
+            mode_name = modes_array[modesArrayIndexSelector][0][0]
 
-            keySignatureIndex = keySignatureIndex + 1
+            # Define Individual Notes Comprising the Particular Mode
+            mode_notes = [''] * 8
+            for x in range(0, 8):
+                # Offset note index by six if minor key
+                y = x 
+                if self.tonality == 'major':
+                    y = x
+                elif self.tonality == 'minor':
+                    y = x + 2
+                
+                # Handling overflow
+                if y > 7:
+                    y = y - 7
 
-            self.modesInKey[selectedMode['mode_name']] = [''] * 8
+                mode_notes[x] = self.keySignature[modes_dictionary[mode_name][y]]
+            
+            # Assign mode notes.
+            self.modesInKey[mode_name] = mode_notes
 
-            for x in range (0, 8):
-                self.modesInKey[selectedMode['mode_name']][x] = self.keySignature[modes[modeIndex][1][x]]
-
-            modeIndex = modeIndex + 1
-            modeCounter = modeCounter + 1
+            # Increment counters
+            modesArrayIndexSelector = modesArrayIndexSelector + 1
+            modeIterator = modeIterator + 1
 
 
     def calculate_scale_name(self):
@@ -101,7 +111,6 @@ class newScale:
             intonation = 'b' * abs(self.intonation)
         name = f"{self.key}{intonation} {self.tonality}"
         return name
-
 
 for key in keys:
     scale = newScale(keys[key][0], keys[key][1], keys[key][2])
