@@ -1,11 +1,10 @@
 #  This file will contain methods to generate scales in their various keys with their various modes.
-#  Generate Major Scales
-#  Generate Minor Scales
-#  Generate Chromatic Scales
-#  Generate Pentatonic Scales
+#  Generate Major, Minor, Chromatic, Pentatonic Scales
+
 from resources.alphabet import *
 from resources.keys import *
 from resources.modes import *
+
 
 class newScale:
     def __init__(self, key, intonation, tonality):
@@ -28,6 +27,7 @@ class newScale:
         
         self.calculate_modes()
         
+
     def calculate_key_signature(self):
         if self.tonality == 'major':
             self.rules = [2, 2, 1, 2, 2, 2, 1]
@@ -49,6 +49,7 @@ class newScale:
             self.keySignature[x] = number_to_note(self.keySignature[x])
         return
 
+
     def calculate_intonation(self):
         count = 0
         for letter in self.intonation:
@@ -58,19 +59,21 @@ class newScale:
                 count = count - 1
         self.intonation = count
 
+
     def calculate_modes(self):
         keySignatureIndex = 0
         modeIndex = 0
         modeCounter = 0
 
         if self.tonality == 'minor':
-            modeIndex = 5
+            modeIndex = 4
         elif self.tonality == 'major':
             modeIndex = 0
 
-        while modeCounter < 8:
-            mode_name = f'{modes[modeIndex][0]}'
-            print(mode_name)
+        while modeCounter < 6:
+            if modeIndex > 1:
+                modeIndex = modeIndex - 6
+            mode_name = f'{modes[modeIndex][0][0]}'
 
             selectedMode_root_note = f'{self.keySignature[keySignatureIndex]}'
             selectedMode = {}
@@ -83,14 +86,11 @@ class newScale:
             self.modesInKey[selectedMode['mode_name']] = [''] * 8
 
             for x in range (0, 8):
-                print(f'Selected Mode: {selectedMode}')
-                # self.modesInKey[selectedMode['mode_name']][x] = self.keySignature[modes[modeIndex][x]]
+                self.modesInKey[selectedMode['mode_name']][x] = self.keySignature[modes[modeIndex][1][x]]
 
             modeIndex = modeIndex + 1
             modeCounter = modeCounter + 1
 
-            
-            
 
     def calculate_scale_name(self):
         # Generates the name of the base scale
@@ -102,6 +102,7 @@ class newScale:
         name = f"{self.key}{intonation} {self.tonality}"
         return name
 
+
 for key in keys:
     scale = newScale(keys[key][0], keys[key][1], keys[key][2])
     print("\n", scale.key, scale.tonality, "Key Signature:", scale.keySignature)
@@ -110,5 +111,4 @@ for key in keys:
         # print(f"length: {name_length}")
         spaces = (' ' * (24 - name_length))
         print(f'    \'{mode}\':{spaces}{scale.modesInKey[mode][:]},')
-    #print(scale.modesInKey)
 
