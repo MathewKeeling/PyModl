@@ -34,6 +34,8 @@
 #    C Phrygian is a member of the A Major Scale
 #    Parent scale: A Major
 
+
+
 aMajorsScale = {
     'key'   :        ['A'],
     'tonality':      ['major'],

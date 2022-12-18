@@ -60,19 +60,37 @@ class newScale:
 
     def calculate_modes(self):
         keySignatureIndex = 0
-        for mode in modes:
-            print(mode)
-            mode_name = '{}'.format(mode)
-            selectedMode_root_note = f'{self.keySignature[keySignatureIndex]}'
+        modeIndex = 0
+        modeCounter = 0
 
+        if self.tonality == 'minor':
+            modeIndex = 5
+        elif self.tonality == 'major':
+            modeIndex = 0
+
+        while modeCounter < 8:
+            mode_name = f'{modes[modeIndex][0]}'
+            print(mode_name)
+
+            selectedMode_root_note = f'{self.keySignature[keySignatureIndex]}'
             selectedMode = {}
+
             selectedMode['mode_name'] = mode_name
             selectedMode['mode_root_note'] = selectedMode_root_note
 
             keySignatureIndex = keySignatureIndex + 1
+
             self.modesInKey[selectedMode['mode_name']] = [''] * 8
+
             for x in range (0, 8):
-                self.modesInKey[selectedMode['mode_name']][x] = self.keySignature[modes[mode][x]]
+                print(f'Selected Mode: {selectedMode}')
+                # self.modesInKey[selectedMode['mode_name']][x] = self.keySignature[modes[modeIndex][x]]
+
+            modeIndex = modeIndex + 1
+            modeCounter = modeCounter + 1
+
+            
+            
 
     def calculate_scale_name(self):
         # Generates the name of the base scale
