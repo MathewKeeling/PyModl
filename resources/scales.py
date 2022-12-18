@@ -34,95 +34,173 @@
 #    C Phrygian is a member of the A Major Scale
 #    Parent scale: A Major
 
-
-
-aMajorsScale = {
-    'key'   :        ['A'],
-    'tonality':      ['major'],
-    'ionian':        ['A', 'B', 'C♯/D♭', 'D', 'E', 'F♯/G♭', 'G♯/A♭', 'A'],
-    'dorian':        ['B', 'C♯/D♭', 'D', 'E', 'F♯/G♭', 'G♯/A♭', 'A', 'B'],
-    'phrygian':      ['C♯/D♭', 'D', 'E', 'F♯/G♭', 'G♯/A♭', 'A', 'B', 'C♯/D♭'],
-    'lydian':        ['D', 'E', 'F♯/G♭', 'G♯/A♭', 'A', 'B', 'C♯/D♭', 'D'],
-    'mixolydian':    ['E', 'F♯/G♭', 'G♯/A♭', 'A', 'B', 'C♯/D♭', 'D', 'E'],
-    'aeolian':       ['F♯/G♭', 'G♯/A♭', 'A', 'B', 'C♯/D♭', 'D', 'E', 'F♯/G♭'],
-    'locrian':       ['G♯/A♭', 'A', 'B', 'C♯/D♭', 'D', 'E', 'F♯/G♭', 'G♯/A♭']
+# Major Scales
+aMajorScale = {
+    'key'   :           ['A'],    
+    'ionian':           ['A', 'B', 'C♯/D♭', 'D', 'E', 'F♯/G♭', 'G♯/A♭', 'A'],    
+    'dorian':           ['B', 'C♯/D♭', 'D', 'E', 'F♯/G♭', 'G♯/A♭', 'A', 'B'],    
+    'phrygian':         ['C♯/D♭', 'D', 'E', 'F♯/G♭', 'G♯/A♭', 'A', 'B', 'C♯/D♭'],
+    'lydian':           ['D', 'E', 'F♯/G♭', 'G♯/A♭', 'A', 'B', 'C♯/D♭', 'D'],
+    'mixolydian':       ['E', 'F♯/G♭', 'G♯/A♭', 'A', 'B', 'C♯/D♭', 'D', 'E'],
+    'aeolian':          ['F♯/G♭', 'G♯/A♭', 'A', 'B', 'C♯/D♭', 'D', 'E', 'F♯/G♭'],
+    'locrian':          ['G♯/A♭', 'A', 'B', 'C♯/D♭', 'D', 'E', 'F♯/G♭', 'G♯/A♭'],
 }
 
-bMajorsScale = {
-    'key'   :        ['B'],
-    'tonality':      ['major'],
-    'ionian':        ['B', 'C♯/D♭', 'D♯/E♭', 'E', 'F♯/G♭', 'G♯/A♭', 'A♯/B♭', 'B'],
-    'dorian':        ['C♯/D♭', 'D♯/E♭', 'E', 'F♯/G♭', 'G♯/A♭', 'A♯/B♭', 'B', 'C♯/D♭'],
-    'phrygian':      ['D♯/E♭', 'E', 'F♯/G♭', 'G♯/A♭', 'A♯/B♭', 'B', 'C♯/D♭', 'D♯/E♭'],
-    'lydian':        ['E', 'F♯/G♭', 'G♯/A♭', 'A♯/B♭', 'B', 'C♯/D♭', 'D♯/E♭', 'E'],
-    'mixolydian':    ['E', 'F♯/G♭', 'G♯/A♭', 'A♯/B♭', 'B', 'C♯/D♭', 'D♯/E♭', 'E'],
-    'aeolian':       ['F♯/G♭', 'G♯/A♭', 'A♯/B♭', 'B', 'C♯/D♭', 'D♯/E♭', 'E', 'F♯/G♭'],
-    'locrian':       ['A♯/B♭', 'B', 'C♯/D♭', 'D♯/E♭', 'E', 'F♯/G♭', 'G♯/A♭', 'A♯/B♭']
+bMajorScale = {
+    'key'   :           ['B'],   
+    'ionian':           ['B', 'C♯/D♭', 'D♯/E♭', 'E', 'F♯/G♭', 'G♯/A♭', 'A♯/B♭', 'B'],
+    'dorian':           ['C♯/D♭', 'D♯/E♭', 'E', 'F♯/G♭', 'G♯/A♭', 'A♯/B♭', 'B', 'C♯/D♭'],
+    'phrygian':         ['D♯/E♭', 'E', 'F♯/G♭', 'G♯/A♭', 'A♯/B♭', 'B', 'C♯/D♭', 'D♯/E♭'],
+    'lydian':           ['E', 'F♯/G♭', 'G♯/A♭', 'A♯/B♭', 'B', 'C♯/D♭', 'D♯/E♭', 'E'],
+    'mixolydian':       ['F♯/G♭', 'G♯/A♭', 'A♯/B♭', 'B', 'C♯/D♭', 'D♯/E♭', 'E', 'F♯/G♭'],
+    'aeolian':          ['G♯/A♭', 'A♯/B♭', 'B', 'C♯/D♭', 'D♯/E♭', 'E', 'F♯/G♭', 'G♯/A♭'],
+    'locrian':          ['A♯/B♭', 'B', 'C♯/D♭', 'D♯/E♭', 'E', 'F♯/G♭', 'G♯/A♭', 'A♯/B♭'],
 }
 
 cMajorScale = {
-    'key'   :        ['C'],
-    'tonality':      ['major'],
-    'ionian':        ['C', 'D', 'E', 'F', 'G', 'A', 'B', 'C'],
-    'dorian':        ['D', 'E', 'F', 'G', 'A', 'B', 'C', 'D'],
-    'phrygian':      ['E', 'F', 'G', 'A', 'B', 'C', 'D', 'E'],
-    'lydian':        ['F', 'G', 'A', 'B', 'C', 'D', 'E', 'F'],
-    'mixolydian':    ['G', 'A', 'B', 'C', 'D', 'E', 'F', 'G'],
-    'aeolian':       ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'A'],
-    'locrian':       ['B', 'C', 'D', 'E', 'F', 'G', 'A', 'B']
+    'key'   :           ['C'],   
+    'ionian':           ['C', 'D', 'E', 'F', 'G', 'A', 'B', 'C'],
+    'dorian':           ['D', 'E', 'F', 'G', 'A', 'B', 'C', 'D'],
+    'phrygian':         ['E', 'F', 'G', 'A', 'B', 'C', 'D', 'E'],
+    'lydian':           ['F', 'G', 'A', 'B', 'C', 'D', 'E', 'F'],
+    'mixolydian':       ['G', 'A', 'B', 'C', 'D', 'E', 'F', 'G'],
+    'aeolian':          ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'A'],
+    'locrian':          ['B', 'C', 'D', 'E', 'F', 'G', 'A', 'B'],
 }
 
-dMajorsScale = {
-    'key'   :        ['D'],
-    'tonality':      ['major'],
-    'ionian':        ['D', 'E', 'F#', 'G', 'A', 'B', 'C#', 'D'],
-    'dorian':        ['E', 'F#', 'G', 'A', 'B', 'C#', 'D', 'E'],
-    'phrygian':      ['F#', 'G', 'A', 'B', 'C#', 'D', 'E', 'F#'],
-    'lydian':        ['G', 'A', 'B', 'C#', 'D', 'E', 'F#', 'G'],
-    'mixolydian':    ['A', '', '', '', '', '', '', ''],
-    'aeolian':       ['B', '', '', '', '', '', '', ''],
-    'locrian':       ['C#', '', '', '', '', '', '', '']
+dMajorScale = {
+    'key'   :           ['D'],   
+    'ionian':           ['D', 'E', 'F♯/G♭', 'G', 'A', 'B', 'C♯/D♭', 'D'],
+    'dorian':           ['E', 'F♯/G♭', 'G', 'A', 'B', 'C♯/D♭', 'D', 'E'],
+    'phrygian':         ['F♯/G♭', 'G', 'A', 'B', 'C♯/D♭', 'D', 'E', 'F♯/G♭'],
+    'lydian':           ['G', 'A', 'B', 'C♯/D♭', 'D', 'E', 'F♯/G♭', 'G'],
+    'mixolydian':       ['A', 'B', 'C♯/D♭', 'D', 'E', 'F♯/G♭', 'G', 'A'],
+    'aeolian':          ['B', 'C♯/D♭', 'D', 'E', 'F♯/G♭', 'G', 'A', 'B'],
+    'locrian':          ['C♯/D♭', 'D', 'E', 'F♯/G♭', 'G', 'A', 'B', 'C♯/D♭'],
 }
 
-eMajorsScale = {
-    'key'   :        ['E'],
-    'tonality':      ['major'],
-    'ionian':        ['', '', '', '', '', '', '', ''],
-    'dorian':        ['', '', '', '', '', '', '', ''],
-    'phrygian':      ['', '', '', '', '', '', '', ''],
-    'lydian':        ['', '', '', '', '', '', '', ''],
-    'mixolydian':    ['', '', '', '', '', '', '', ''],
-    'aeolian':       ['', '', '', '', '', '', '', ''],
-    'locrian':       ['', '', '', '', '', '', '', '']
+eMajorScale = {
+    'key'   :           ['E'],   
+    'ionian':           ['E', 'F♯/G♭', 'G♯/A♭', 'A', 'B', 'C♯/D♭', 'D♯/E♭', 'E'],
+    'dorian':           ['F♯/G♭', 'G♯/A♭', 'A', 'B', 'C♯/D♭', 'D♯/E♭', 'E', 'F♯/G♭'],
+    'phrygian':         ['G♯/A♭', 'A', 'B', 'C♯/D♭', 'D♯/E♭', 'E', 'F♯/G♭', 'G♯/A♭'],
+    'lydian':           ['A', 'B', 'C♯/D♭', 'D♯/E♭', 'E', 'F♯/G♭', 'G♯/A♭', 'A'],
+    'mixolydian':       ['B', 'C♯/D♭', 'D♯/E♭', 'E', 'F♯/G♭', 'G♯/A♭', 'A', 'B'],
+    'aeolian':          ['C♯/D♭', 'D♯/E♭', 'E', 'F♯/G♭', 'G♯/A♭', 'A', 'B', 'C♯/D♭'],
+    'locrian':          ['D♯/E♭', 'E', 'F♯/G♭', 'G♯/A♭', 'A', 'B', 'C♯/D♭', 'D♯/E♭'],
 }
 
-fMajorsScale = {
-    'key'   :     ['F'],
-    'tonality':   ['major'],
-    'ionian':        ['', '', '', '', '', '', '', ''],
-    'dorian':        ['', '', '', '', '', '', '', ''],
-    'phrygian':      ['', '', '', '', '', '', '', ''],
-    'lydian':        ['', '', '', '', '', '', '', ''],
-    'mixolydian':    ['', '', '', '', '', '', '', ''],
-    'aeolian':       ['', '', '', '', '', '', '', ''],
-    'locrian':       ['', '', '', '', '', '', '', '']
+fMajorScale = {
+    'key'   :           ['F'],   
+    'ionian':           ['F', 'G', 'A', 'A♯/B♭', 'C', 'D', 'E', 'F'],
+    'dorian':           ['G', 'A', 'A♯/B♭', 'C', 'D', 'E', 'F', 'G'],
+    'phrygian':         ['A', 'A♯/B♭', 'C', 'D', 'E', 'F', 'G', 'A'],
+    'lydian':           ['A♯/B♭', 'C', 'D', 'E', 'F', 'G', 'A', 'A♯/B♭'],
+    'mixolydian':       ['C', 'D', 'E', 'F', 'G', 'A', 'A♯/B♭', 'C'],
+    'aeolian':          ['D', 'E', 'F', 'G', 'A', 'A♯/B♭', 'C', 'D'],
+    'locrian':          ['E', 'F', 'G', 'A', 'A♯/B♭', 'C', 'D', 'E'],
 }
 
-gMajorsScale = {
-    'key'   :        ['G'],
-    'tonality':      ['major'],
-    'ionian':        ['G', 'A', 'B', 'C', 'D', 'E', 'F♯/G♭', 'G'],
-    'dorian':        ['A', 'B', 'C', 'D', 'E', 'F♯/G♭', 'G', 'A'],
-    'phrygian':      ['B', 'C', 'D', 'E', 'F♯/G♭', 'G', 'A', 'B'],
-    'lydian':        ['C', 'D', 'E', 'F♯/G♭', 'G', 'A', 'B', 'C'],
-    'mixolydian':    ['D', 'E', 'F♯/G♭', 'G', 'A', 'B', 'C', 'D'],
-    'aeolian':       ['E', 'F♯/G♭', 'G', 'A', 'B', 'C', 'D', 'E'],
-    'locrian':       ['F♯/G♭', 'G', 'A', 'B', 'C', 'D', 'E', 'F♯/G♭']
+gMajorScale = {
+    'key'   :           ['G'],   
+    'ionian':           ['G', 'A', 'B', 'C', 'D', 'E', 'F♯/G♭', 'G'],
+    'dorian':           ['A', 'B', 'C', 'D', 'E', 'F♯/G♭', 'G', 'A'],
+    'phrygian':         ['B', 'C', 'D', 'E', 'F♯/G♭', 'G', 'A', 'B'],
+    'lydian':           ['C', 'D', 'E', 'F♯/G♭', 'G', 'A', 'B', 'C'],
+    'mixolydian':       ['D', 'E', 'F♯/G♭', 'G', 'A', 'B', 'C', 'D'],
+    'aeolian':          ['E', 'F♯/G♭', 'G', 'A', 'B', 'C', 'D', 'E'],
+    'locrian':          ['F♯/G♭', 'G', 'A', 'B', 'C', 'D', 'E', 'F♯/G♭'],
 }
 
+# Minor Scales
+aMinorScale = {
+    'key'   :           ['a'],
+    'tonality':         ['minor'],
+    'aeolian':          ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'A'],
+    'locrian':          ['B', 'C', 'D', 'E', 'F', 'G', 'A', 'B'],
+    'ionian':           ['C', 'D', 'E', 'F', 'G', 'A', 'B', 'C'],
+    'dorian':           ['D', 'E', 'F', 'G', 'A', 'B', 'C', 'D'],
+    'phrygian':         ['E', 'F', 'G', 'A', 'B', 'C', 'D', 'E'],
+    'lydian':           ['F', 'G', 'A', 'B', 'C', 'D', 'E', 'F'],
+    'mixolydian':       ['G', 'A', 'B', 'C', 'D', 'E', 'F', 'G'],
+ }
 
+bMinorScale = {
+    'key'   :           ['b'],
+    'tonality':         ['minor'],
+    'aeolian':          ['B', 'C♯/D♭', 'D', 'E', 'F♯/G♭', 'G', 'A', 'B'],
+    'locrian':          ['C♯/D♭', 'D', 'E', 'F♯/G♭', 'G', 'A', 'B', 'C♯/D♭'],
+    'ionian':           ['D', 'E', 'F♯/G♭', 'G', 'A', 'B', 'C♯/D♭', 'D'],
+    'dorian':           ['E', 'F♯/G♭', 'G', 'A', 'B', 'C♯/D♭', 'D', 'E'],
+    'phrygian':         ['F♯/G♭', 'G', 'A', 'B', 'C♯/D♭', 'D', 'E', 'F♯/G♭'],
+    'lydian':           ['G', 'A', 'B', 'C♯/D♭', 'D', 'E', 'F♯/G♭', 'G'],
+    'mixolydian':       ['A', 'B', 'C♯/D♭', 'D', 'E', 'F♯/G♭', 'G', 'A'],
+}
+
+cMinorScale = {
+    'key'   :           ['c'],
+    'tonality':         ['minor'],
+    'aeolian':          ['C', 'D', 'D♯/E♭', 'F', 'G', 'G♯/A♭', 'A♯/B♭', 'C'],
+    'locrian':          ['D', 'D♯/E♭', 'F', 'G', 'G♯/A♭', 'A♯/B♭', 'C', 'D'],
+    'ionian':           ['D♯/E♭', 'F', 'G', 'G♯/A♭', 'A♯/B♭', 'C', 'D', 'D♯/E♭'],
+    'dorian':           ['F', 'G', 'G♯/A♭', 'A♯/B♭', 'C', 'D', 'D♯/E♭', 'F'],
+    'phrygian':         ['G', 'G♯/A♭', 'A♯/B♭', 'C', 'D', 'D♯/E♭', 'F', 'G'],
+    'lydian':           ['G♯/A♭', 'A♯/B♭', 'C', 'D', 'D♯/E♭', 'F', 'G', 'G♯/A♭'],
+    'mixolydian':       ['A♯/B♭', 'C', 'D', 'D♯/E♭', 'F', 'G', 'G♯/A♭', 'A♯/B♭'],
+}
+
+dMinorScale = {
+    'key'   :           ['d'],
+    'tonality':         ['minor'],
+    'aeolian':          ['D', 'E', 'F', 'G', 'A', 'A♯/B♭', 'C', 'D'],
+    'locrian':          ['E', 'F', 'G', 'A', 'A♯/B♭', 'C', 'D', 'E'],
+    'ionian':           ['F', 'G', 'A', 'A♯/B♭', 'C', 'D', 'E', 'F'],
+    'dorian':           ['G', 'A', 'A♯/B♭', 'C', 'D', 'E', 'F', 'G'],
+    'phrygian':         ['A', 'A♯/B♭', 'C', 'D', 'E', 'F', 'G', 'A'],
+    'lydian':           ['A♯/B♭', 'C', 'D', 'E', 'F', 'G', 'A', 'A♯/B♭'],
+    'mixolydian':       ['C', 'D', 'E', 'F', 'G', 'A', 'A♯/B♭', 'C'],
+}
+
+eMinorScale = {
+    'key'   :           ['e'],
+    'tonality':         ['minor'],
+    'aeolian':          ['E', 'F♯/G♭', 'G', 'A', 'B', 'C', 'D', 'E'],
+    'locrian':          ['F♯/G♭', 'G', 'A', 'B', 'C', 'D', 'E', 'F♯/G♭'],
+    'ionian':           ['G', 'A', 'B', 'C', 'D', 'E', 'F♯/G♭', 'G'],
+    'dorian':           ['A', 'B', 'C', 'D', 'E', 'F♯/G♭', 'G', 'A'],
+    'phrygian':         ['B', 'C', 'D', 'E', 'F♯/G♭', 'G', 'A', 'B'],
+    'lydian':           ['C', 'D', 'E', 'F♯/G♭', 'G', 'A', 'B', 'C'],
+    'mixolydian':       ['D', 'E', 'F♯/G♭', 'G', 'A', 'B', 'C', 'D'],
+}
+
+fMinorScale = {
+    'key'   :           ['f'],
+    'tonality':         ['minor'],
+    'aeolian':          ['F', 'G', 'G♯/A♭', 'A♯/B♭', 'C', 'C♯/D♭', 'D♯/E♭', 'F'],
+    'locrian':          ['G', 'G♯/A♭', 'A♯/B♭', 'C', 'C♯/D♭', 'D♯/E♭', 'F', 'G'],
+    'ionian':           ['G♯/A♭', 'A♯/B♭', 'C', 'C♯/D♭', 'D♯/E♭', 'F', 'G', 'G♯/A♭'],
+    'dorian':           ['A♯/B♭', 'C', 'C♯/D♭', 'D♯/E♭', 'F', 'G', 'G♯/A♭', 'A♯/B♭'],
+    'phrygian':         ['C', 'C♯/D♭', 'D♯/E♭', 'F', 'G', 'G♯/A♭', 'A♯/B♭', 'C'],
+    'lydian':           ['C♯/D♭', 'D♯/E♭', 'F', 'G', 'G♯/A♭', 'A♯/B♭', 'C', 'C♯/D♭'],
+    'mixolydian':       ['D♯/E♭', 'F', 'G', 'G♯/A♭', 'A♯/B♭', 'C', 'C♯/D♭', 'D♯/E♭'],
+}
+
+gMinorScale = {
+    'key'   :           ['g'],
+    'tonality':         ['minor'],
+    'aeolian':          ['G', 'A', 'A♯/B♭', 'C', 'D', 'D♯/E♭', 'F', 'G'],
+    'locrian':          ['A', 'A♯/B♭', 'C', 'D', 'D♯/E♭', 'F', 'G', 'A'],
+    'ionian':           ['A♯/B♭', 'C', 'D', 'D♯/E♭', 'F', 'G', 'A', 'A♯/B♭'],
+    'dorian':           ['C', 'D', 'D♯/E♭', 'F', 'G', 'A', 'A♯/B♭', 'C'],
+    'phrygian':         ['D', 'D♯/E♭', 'F', 'G', 'A', 'A♯/B♭', 'C', 'D'],
+    'lydian':           ['D♯/E♭', 'F', 'G', 'A', 'A♯/B♭', 'C', 'D', 'D♯/E♭'],
+    'mixolydian':       ['F', 'G', 'A', 'A♯/B♭', 'C', 'D', 'D♯/E♭', 'F'],
+}
 
 #  debug
 #for entry in cMajorScale:
 #    print(entry)
 #    print('\t', cMajorScale[entry])
+
+
+

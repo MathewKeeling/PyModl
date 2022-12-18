@@ -1,11 +1,10 @@
 #  This file will contain methods to generate scales in their various keys with their various modes.
-#  Generate Major Scales
-#  Generate Minor Scales
-#  Generate Chromatic Scales
-#  Generate Pentatonic Scales
+#  Generate Major, Minor, Chromatic, Pentatonic Scales
+
 from resources.alphabet import *
 from resources.keys import *
 from resources.modes import *
+
 
 class newScale:
     def __init__(self, key, intonation, tonality):
@@ -28,6 +27,7 @@ class newScale:
         
         self.calculate_modes()
         
+
     def calculate_key_signature(self):
         if self.tonality == 'major':
             self.rules = [2, 2, 1, 2, 2, 2, 1]
@@ -49,6 +49,7 @@ class newScale:
             self.keySignature[x] = number_to_note(self.keySignature[x])
         return
 
+
     def calculate_intonation(self):
         count = 0
         for letter in self.intonation:
@@ -58,39 +59,48 @@ class newScale:
                 count = count - 1
         self.intonation = count
 
+
     def calculate_modes(self):
-        keySignatureIndex = 0
-        modeIndex = 0
-        modeCounter = 0
+        modesArrayIndexSelector = 0
+        modeIterator = 0
 
-        if self.tonality == 'minor':
-            modeIndex = 5
-        elif self.tonality == 'major':
-            modeIndex = 0
+        if self.tonality == 'major':
+            modesArrayIndexSelector = 0
+        elif self.tonality == 'minor':
+            modesArrayIndexSelector = modesArrayIndexSelector + 5
 
-        while modeCounter < 8:
-            mode_name = f'{modes[modeIndex][0]}'
-            print(mode_name)
+        # Iterate Over the Constituent Modes Per Key Signature
+        while modeIterator < 7:
 
-            selectedMode_root_note = f'{self.keySignature[keySignatureIndex]}'
-            selectedMode = {}
+            # Handling overflow
+            if modesArrayIndexSelector > 6:
+                modesArrayIndexSelector = modesArrayIndexSelector - 7
 
-            selectedMode['mode_name'] = mode_name
-            selectedMode['mode_root_note'] = selectedMode_root_note
+            mode_name = modes_array[modesArrayIndexSelector][0][0]
 
-            keySignatureIndex = keySignatureIndex + 1
+            # Define Individual Notes Comprising the Particular Mode
+            mode_notes = [''] * 8
+            for x in range(0, 8):
+                # Offset note index by six if minor key
+                y = x 
+                if self.tonality == 'major':
+                    y = x
+                elif self.tonality == 'minor':
+                    y = x + 2
+                
+                # Handling overflow
+                if y > 7:
+                    y = y - 7
 
-            self.modesInKey[selectedMode['mode_name']] = [''] * 8
-
-            for x in range (0, 8):
-                print(f'Selected Mode: {selectedMode}')
-                # self.modesInKey[selectedMode['mode_name']][x] = self.keySignature[modes[modeIndex][x]]
-
-            modeIndex = modeIndex + 1
-            modeCounter = modeCounter + 1
-
+                mode_notes[x] = self.keySignature[modes_dictionary[mode_name][y]]
             
-            
+            # Assign mode notes.
+            self.modesInKey[mode_name] = mode_notes
+
+            # Increment counters
+            modesArrayIndexSelector = modesArrayIndexSelector + 1
+            modeIterator = modeIterator + 1
+
 
     def calculate_scale_name(self):
         # Generates the name of the base scale
@@ -110,5 +120,4 @@ for key in keys:
         # print(f"length: {name_length}")
         spaces = (' ' * (24 - name_length))
         print(f'    \'{mode}\':{spaces}{scale.modesInKey[mode][:]},')
-    #print(scale.modesInKey)
 
