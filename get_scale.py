@@ -10,14 +10,22 @@ from resources.modes import *
 class newScale:
     def __init__(self, key, intonation, tonality):
         self.key = key.upper()
+
         self.intonation = intonation
         self.calculate_intonation()
+
         self.tonality = tonality
+
         self.rules = []
+
         self.keySignature = ['']
+
         self.calculate_key_signature()
-        self.name = self.calculate_name()
+
+        self.name = self.calculate_scale_name()
+
         self.modesInKey = {}
+        
         self.calculate_modes()
         
     def calculate_key_signature(self):
@@ -53,27 +61,36 @@ class newScale:
     def calculate_modes(self):
         keySignatureIndex = 0
         for mode in modes:
-            selectedMode = '{} {}'.format(self.keySignature[keySignatureIndex], mode)
-            keySignatureIndex = keySignatureIndex + 1
-            self.modesInKey[selectedMode] = ['']
-            self.modesInKey[selectedMode] = self.modesInKey[selectedMode] * 8
-            for x in range (0, 8):
-                self.modesInKey[selectedMode][x] = self.keySignature[modes[mode][x]]
+            print(mode)
+            mode_name = '{}'.format(mode)
+            selectedMode_root_note = f'{self.keySignature[keySignatureIndex]}'
 
-    def calculate_name(self):
+            selectedMode = {}
+            selectedMode['mode_name'] = mode_name
+            selectedMode['mode_root_note'] = selectedMode_root_note
+
+            keySignatureIndex = keySignatureIndex + 1
+            self.modesInKey[selectedMode['mode_name']] = [''] * 8
+            for x in range (0, 8):
+                self.modesInKey[selectedMode['mode_name']][x] = self.keySignature[modes[mode][x]]
+
+    def calculate_scale_name(self):
+        # Generates the name of the base scale
         intonation = ''
         if self.intonation > 0:
             intonation = '#' * self.intonation
         if self.intonation < 0:
             intonation = 'b' * abs(self.intonation)
-        name = "{}{} {}".format(self.key, intonation, self.tonality)
+        name = f"{self.key}{intonation} {self.tonality}"
         return name
 
 for key in keys:
     scale = newScale(keys[key][0], keys[key][1], keys[key][2])
     print("\n", scale.key, scale.tonality, "Key Signature:", scale.keySignature)
     for mode in scale.modesInKey:
-        print("   ",mode)
-        print("      ", scale.modesInKey[mode][:])
+        name_length = len(f'    \'{mode}\':')
+        # print(f"length: {name_length}")
+        spaces = (' ' * (24 - name_length))
+        print(f'    \'{mode}\':{spaces}{scale.modesInKey[mode][:]},')
     #print(scale.modesInKey)
 
