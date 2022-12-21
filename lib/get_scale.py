@@ -1,9 +1,9 @@
 #  This file will contain methods to generate scales in their various keys with their various modes.
 #  Generate Major, Minor, Chromatic, Pentatonic Scales
 
-from resources.alphabet import *
-from resources.keys import *
-from resources.modes import *
+from alphabet import *
+from keys import *
+from modes import *
 
 
 class newScale:

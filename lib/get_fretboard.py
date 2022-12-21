@@ -1,5 +1,5 @@
-from resources.pitch_notation import *
-from resources.tunings import *
+from pitch_notation import *
+from tunings import *
 
 class Fret_Board:
     def __init__(self, string_count, fret_depth):
