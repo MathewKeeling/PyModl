@@ -1,9 +1,6 @@
 #  https://www.ece.iastate.edu/~alexs/classes/2016_Spring_575/HW/HW5/files/piano-key-freq-wikipedia.pdf 
 
-# this import doesn't work if you run this module directly... need to learn how to avoid this problem
-from resources.alphabet import *
-# from alphabet import *
-
+from alphabet import *
 
 def insert_identifier(string, fulcrum, symbol, octave):
     '''adds octave identifiers to notes

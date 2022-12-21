@@ -21,7 +21,6 @@ class Fret_Board:
                 self.fret_board[string][fret] = note
 
     def populate_canonical(self):
-        strings, frets = (self.string_count, self.fret_depth)
         self.fret_board = [[0 for x in range(self.fret_depth)] for x in range(self.string_count)]
         for string in range(0, self.string_count ):
             for fret in range(0, self.fret_depth):
