@@ -1,5 +1,5 @@
 # Changelog
-## Version 0.25 - 2022-12-
+## Version 0.25 - 2022-12-21
 * Updated Changelog
   * Changed dates from YYYY/MM/DD to YYYY-MM-DD.
   * Added some missing dates.
