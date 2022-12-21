@@ -1,4 +1,7 @@
 # Changelog
+## Version 0.26 - 2022-12-
+* Created a circle of fifths generator
+
 ## Version 0.25 - 2022-12-21
 * Updated Changelog
   * Changed dates from YYYY/MM/DD to YYYY-MM-DD.
