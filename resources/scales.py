@@ -35,7 +35,7 @@
 #    Parent scale: A Major
 
 # Major Scales
-aMajorScale = {
+a_major_scale = {
     'key'   :           ['A'],    
     'ionian':           ['A', 'B', 'C♯/D♭', 'D', 'E', 'F♯/G♭', 'G♯/A♭', 'A'],    
     'dorian':           ['B', 'C♯/D♭', 'D', 'E', 'F♯/G♭', 'G♯/A♭', 'A', 'B'],    
@@ -46,7 +46,7 @@ aMajorScale = {
     'locrian':          ['G♯/A♭', 'A', 'B', 'C♯/D♭', 'D', 'E', 'F♯/G♭', 'G♯/A♭'],
 }
 
-bMajorScale = {
+b_major_scale = {
     'key'   :           ['B'],   
     'ionian':           ['B', 'C♯/D♭', 'D♯/E♭', 'E', 'F♯/G♭', 'G♯/A♭', 'A♯/B♭', 'B'],
     'dorian':           ['C♯/D♭', 'D♯/E♭', 'E', 'F♯/G♭', 'G♯/A♭', 'A♯/B♭', 'B', 'C♯/D♭'],
@@ -57,7 +57,7 @@ bMajorScale = {
     'locrian':          ['A♯/B♭', 'B', 'C♯/D♭', 'D♯/E♭', 'E', 'F♯/G♭', 'G♯/A♭', 'A♯/B♭'],
 }
 
-cMajorScale = {
+c_major_scale = {
     'key'   :           ['C'],   
     'ionian':           ['C', 'D', 'E', 'F', 'G', 'A', 'B', 'C'],
     'dorian':           ['D', 'E', 'F', 'G', 'A', 'B', 'C', 'D'],
@@ -68,7 +68,7 @@ cMajorScale = {
     'locrian':          ['B', 'C', 'D', 'E', 'F', 'G', 'A', 'B'],
 }
 
-dMajorScale = {
+d_major_scale = {
     'key'   :           ['D'],   
     'ionian':           ['D', 'E', 'F♯/G♭', 'G', 'A', 'B', 'C♯/D♭', 'D'],
     'dorian':           ['E', 'F♯/G♭', 'G', 'A', 'B', 'C♯/D♭', 'D', 'E'],
@@ -79,7 +79,7 @@ dMajorScale = {
     'locrian':          ['C♯/D♭', 'D', 'E', 'F♯/G♭', 'G', 'A', 'B', 'C♯/D♭'],
 }
 
-eMajorScale = {
+e_major_scale = {
     'key'   :           ['E'],   
     'ionian':           ['E', 'F♯/G♭', 'G♯/A♭', 'A', 'B', 'C♯/D♭', 'D♯/E♭', 'E'],
     'dorian':           ['F♯/G♭', 'G♯/A♭', 'A', 'B', 'C♯/D♭', 'D♯/E♭', 'E', 'F♯/G♭'],
@@ -90,7 +90,7 @@ eMajorScale = {
     'locrian':          ['D♯/E♭', 'E', 'F♯/G♭', 'G♯/A♭', 'A', 'B', 'C♯/D♭', 'D♯/E♭'],
 }
 
-fMajorScale = {
+f_major_scale = {
     'key'   :           ['F'],   
     'ionian':           ['F', 'G', 'A', 'A♯/B♭', 'C', 'D', 'E', 'F'],
     'dorian':           ['G', 'A', 'A♯/B♭', 'C', 'D', 'E', 'F', 'G'],
@@ -101,7 +101,7 @@ fMajorScale = {
     'locrian':          ['E', 'F', 'G', 'A', 'A♯/B♭', 'C', 'D', 'E'],
 }
 
-gMajorScale = {
+g_major_scale = {
     'key'   :           ['G'],   
     'ionian':           ['G', 'A', 'B', 'C', 'D', 'E', 'F♯/G♭', 'G'],
     'dorian':           ['A', 'B', 'C', 'D', 'E', 'F♯/G♭', 'G', 'A'],
@@ -113,7 +113,7 @@ gMajorScale = {
 }
 
 # Minor Scales
-aMinorScale = {
+a_minor_scale = {
     'key'   :           ['a'],
     'tonality':         ['minor'],
     'aeolian':          ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'A'],
@@ -125,7 +125,7 @@ aMinorScale = {
     'mixolydian':       ['G', 'A', 'B', 'C', 'D', 'E', 'F', 'G'],
  }
 
-bMinorScale = {
+b_minor_scale = {
     'key'   :           ['b'],
     'tonality':         ['minor'],
     'aeolian':          ['B', 'C♯/D♭', 'D', 'E', 'F♯/G♭', 'G', 'A', 'B'],
@@ -137,7 +137,7 @@ bMinorScale = {
     'mixolydian':       ['A', 'B', 'C♯/D♭', 'D', 'E', 'F♯/G♭', 'G', 'A'],
 }
 
-cMinorScale = {
+c_minor_scale = {
     'key'   :           ['c'],
     'tonality':         ['minor'],
     'aeolian':          ['C', 'D', 'D♯/E♭', 'F', 'G', 'G♯/A♭', 'A♯/B♭', 'C'],
@@ -149,7 +149,7 @@ cMinorScale = {
     'mixolydian':       ['A♯/B♭', 'C', 'D', 'D♯/E♭', 'F', 'G', 'G♯/A♭', 'A♯/B♭'],
 }
 
-dMinorScale = {
+d_minor_scale = {
     'key'   :           ['d'],
     'tonality':         ['minor'],
     'aeolian':          ['D', 'E', 'F', 'G', 'A', 'A♯/B♭', 'C', 'D'],
@@ -161,7 +161,7 @@ dMinorScale = {
     'mixolydian':       ['C', 'D', 'E', 'F', 'G', 'A', 'A♯/B♭', 'C'],
 }
 
-eMinorScale = {
+e_minor_scale = {
     'key'   :           ['e'],
     'tonality':         ['minor'],
     'aeolian':          ['E', 'F♯/G♭', 'G', 'A', 'B', 'C', 'D', 'E'],
@@ -173,7 +173,7 @@ eMinorScale = {
     'mixolydian':       ['D', 'E', 'F♯/G♭', 'G', 'A', 'B', 'C', 'D'],
 }
 
-fMinorScale = {
+f_minor_scale = {
     'key'   :           ['f'],
     'tonality':         ['minor'],
     'aeolian':          ['F', 'G', 'G♯/A♭', 'A♯/B♭', 'C', 'C♯/D♭', 'D♯/E♭', 'F'],
@@ -185,7 +185,7 @@ fMinorScale = {
     'mixolydian':       ['D♯/E♭', 'F', 'G', 'G♯/A♭', 'A♯/B♭', 'C', 'C♯/D♭', 'D♯/E♭'],
 }
 
-gMinorScale = {
+g_minor_scale = {
     'key'   :           ['g'],
     'tonality':         ['minor'],
     'aeolian':          ['G', 'A', 'A♯/B♭', 'C', 'D', 'D♯/E♭', 'F', 'G'],
@@ -197,10 +197,6 @@ gMinorScale = {
     'mixolydian':       ['F', 'G', 'A', 'A♯/B♭', 'C', 'D', 'D♯/E♭', 'F'],
 }
 
-#  debug
-#for entry in cMajorScale:
-#    print(entry)
-#    print('\t', cMajorScale[entry])
-
-
-
+if __name__ == '__main__':
+    for entry in g_minor_scale:
+        print(entry, g_minor_scale[entry])

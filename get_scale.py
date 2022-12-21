@@ -17,13 +17,13 @@ class newScale:
 
         self.rules = []
 
-        self.keySignature = ['']
+        self.key_signature = ['']
 
         self.calculate_key_signature()
 
         self.name = self.calculate_scale_name()
 
-        self.modesInKey = {}
+        self.modes_in_key = {}
         
         self.calculate_modes()
         
@@ -31,22 +31,22 @@ class newScale:
     def calculate_key_signature(self):
         if self.tonality == 'major':
             self.rules = [2, 2, 1, 2, 2, 2, 1]
-            self.keySignature = self.keySignature * 8
+            self.key_signature = self.key_signature * 8
         elif self.tonality == 'minor':
             self.rules = [2, 1, 2, 2, 1, 2, 2]
-            self.keySignature = self.keySignature * 8
+            self.key_signature = self.key_signature * 8
         elif self.tonality == 'chromatic':
             pass
         elif self.tonality == 'pentatonic':
             pass
         for x in range(0, len(self.rules) + 1):
             if x == 0:
-                self.keySignature[x] = note_to_number(self.key) + self.intonation
+                self.key_signature[x] = note_to_number(self.key) + self.intonation
             if x != 0:
                 # rule minus 1 because first letter has no rule applied
-                self.keySignature[x] = self.keySignature[ x - 1 ] + self.rules[x - 1]
+                self.key_signature[x] = self.key_signature[ x - 1 ] + self.rules[x - 1]
         for x in range(0, len(self.rules) + 1):
-            self.keySignature[x] = number_to_note(self.keySignature[x])
+            self.key_signature[x] = number_to_note(self.key_signature[x])
         return
 
 
@@ -61,22 +61,22 @@ class newScale:
 
 
     def calculate_modes(self):
-        modesArrayIndexSelector = 0
-        modeIterator = 0
+        modes_array_index_selector = 0
+        mode_iterator = 0
 
         if self.tonality == 'major':
-            modesArrayIndexSelector = 0
+            modes_array_index_selector = 0
         elif self.tonality == 'minor':
-            modesArrayIndexSelector = modesArrayIndexSelector + 5
+            modes_array_index_selector = modes_array_index_selector + 5
 
         # Iterate Over the Constituent Modes Per Key Signature
-        while modeIterator < 7:
+        while mode_iterator < 7:
 
             # Handling overflow
-            if modesArrayIndexSelector > 6:
-                modesArrayIndexSelector = modesArrayIndexSelector - 7
+            if modes_array_index_selector > 6:
+                modes_array_index_selector = modes_array_index_selector - 7
 
-            mode_name = modes_array[modesArrayIndexSelector][0][0]
+            mode_name = modes_array[modes_array_index_selector][0]
 
             # Define Individual Notes Comprising the Particular Mode
             mode_notes = [''] * 8
@@ -92,14 +92,14 @@ class newScale:
                 if y > 7:
                     y = y - 7
 
-                mode_notes[x] = self.keySignature[modes_dictionary[mode_name][y]]
+                mode_notes[x] = self.key_signature[modes_dictionary[mode_name][y]]
             
             # Assign mode notes.
-            self.modesInKey[mode_name] = mode_notes
+            self.modes_in_key[mode_name] = mode_notes
 
             # Increment counters
-            modesArrayIndexSelector = modesArrayIndexSelector + 1
-            modeIterator = modeIterator + 1
+            modes_array_index_selector = modes_array_index_selector + 1
+            mode_iterator = mode_iterator + 1
 
 
     def calculate_scale_name(self):
@@ -112,12 +112,13 @@ class newScale:
         name = f"{self.key}{intonation} {self.tonality}"
         return name
 
-for key in keys:
-    scale = newScale(keys[key][0], keys[key][1], keys[key][2])
-    print("\n", scale.key, scale.tonality, "Key Signature:", scale.keySignature)
-    for mode in scale.modesInKey:
-        name_length = len(f'    \'{mode}\':')
-        # print(f"length: {name_length}")
-        spaces = (' ' * (24 - name_length))
-        print(f'    \'{mode}\':{spaces}{scale.modesInKey[mode][:]},')
+if __name__ == '__main__':
+    for key in keys:
+        scale = newScale(keys[key][0], keys[key][1], keys[key][2])
+        print("\n", scale.key, scale.tonality, "Key Signature:", scale.key_signature)
+        for mode in scale.modes_in_key:
+            name_length = len(f'    \'{mode}\':')
+            # print(f"length: {name_length}")
+            spaces = (' ' * (24 - name_length))
+            print(f'    \'{mode}\':{spaces}{scale.modes_in_key[mode][:]},')
 
