@@ -1,4 +1,4 @@
-# GuitarModes
+# PyModl (Pie-MOH-DUHL)
 This project is the result of my passions for guitar and software development. To run this project--download a copy of the repository and give a few of the python files a play!
 
 ## Overview
