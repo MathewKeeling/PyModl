@@ -1,4 +1,7 @@
 # Changelog
+## Version 2024.10.1
+* Changed to CalVer
+
 ## Version 0.26 - 2022-12-
 * Created a circle of fifths generator
 
