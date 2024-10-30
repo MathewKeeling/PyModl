@@ -36,7 +36,7 @@ Before running the script, make sure you have the following:
 
 1. Clone the repository:
     ```bash
-    git clone https://github.com/yourusername/pymodl.git
+    git clone https://github.com/MathewKeeling/PyModl.git
     ```
 2. Navigate to the project directory:
     ```bash
@@ -44,7 +44,11 @@ Before running the script, make sure you have the following:
     ```
 3. Install the required dependencies:
     ```bash
-    pip install -r requirements.txt
+    virtualenv venv
+    . ./venv/bin/activate
+    pip install pipenv
+    pipenv lock
+    pipenv install
     ```
 
 ## Usage
